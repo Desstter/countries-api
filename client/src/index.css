@@ -4,23 +4,25 @@ body {
   height: 100vh;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  
   align-items:center!important;
   justify-content: center!important;
 }
+
 .container{
   background-color: rgba(0, 0, 0, 0.479);
   padding: 4rem!important;
-  
 }
+
 h1{
   color: white;
   margin-bottom: 1rem!important;
 }
+
 .form-select{
   background-image: none!important;
   padding-right: .75rem!important;
 }
+
 button{
   margin-top: 1rem!important;
   width: 100%;

@@ -5,13 +5,10 @@ import Axios from "axios";
 import { useState } from "react";
 
 function App() {
-  const [name, setName] = useState("");
-  const [selectedValue, setSelectedValue] = useState('');
-
-  const handleChange = e => {
-    setSelectedValue(e.value);
-  }
   const countries = [{}];
+  const [name, setName] = useState("");
+  const [country, setCountry] = useState("");
+
   const fetchCountries = async () => {
     await fetch("https://restcountries.com/v3.1/all")
       .then((res) => {
@@ -27,23 +24,31 @@ function App() {
       });
   };
 
+  fetchCountries();
+  
   const sendData = () => {
-    Axios.post("http://localhost:3001/add", {
-      name: name,
-      country: selectedValue,
-    }).then(() => {
-      console.log(name);
-      console.log(selectedValue);
-    });
+    if (name === "" || country === "") {
+      alert("Must fill both fields :'( plis");
+    } else {
+      Axios.post("http://localhost:3001/add", {
+        name: name,
+        country: country,
+      }).then(() => {
+        console.log(name);
+        console.log(country);
+      });
+      alert('Yee :), thanks for u submit <3')
+    }
   };
 
-  fetchCountries();
+  const handleChange = (e) => {
+    setCountry(e.value);
+  };
 
-  
   return (
     <Container>
       <h1>Where Are You From?</h1>
-      <Form validated>
+      <Form>
         <Form.Group>
           <FloatingLabel
             controlId="floatingInput"
@@ -56,14 +61,17 @@ function App() {
               onChange={(event) => {
                 setName(event.target.value);
               }}
-              required
             />
           </FloatingLabel>
-          <Select className="form-select" options={countries}
-          value={countries.find(obj => obj.value === selectedValue)} onChange={handleChange}/>
+          <Select
+            className="form-select"
+            options={countries}
+            value={countries.find((obj) => obj.value === country)}
+            onChange={handleChange}
+          />
         </Form.Group>
         <Button variant="success" size="lg" onClick={sendData}>
-          Success
+          Submit
         </Button>{" "}
       </Form>
     </Container>
