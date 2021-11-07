@@ -1,4 +1,3 @@
-const { response } = require('express');
 const express = require('express');
 const app = express();
 const mysql = require('mysql');
@@ -9,8 +8,8 @@ app.use(express.json());
 
 const port = process.env.PORT || 3001
 
-app.use(express.urlencoded({extended: true})); // New
-app.use(express.json()); // New 
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
 const db = mysql.createConnection({
     connectionLimit: 10,
@@ -27,7 +26,7 @@ app.get('/', (req, res) => {
         }
         console.log('Connected');
     }));
-    res.send('I LOVE MY JOB');
+    res.send('I LOVE U');
 
 });
 
@@ -48,4 +47,3 @@ app.post('/add', (req, res ) =>{
 app.listen(port, () => {
     console.log(`Running Server on port ${port}`);
 });
-
