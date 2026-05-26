@@ -1,29 +1,87 @@
 body {
-  background-image: url('https://www.mural-wallpaper.com/wp-content/uploads/2021/08/S-WM24.jpg');
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
   display: flex;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  align-items:center!important;
-  justify-content: center!important;
+  align-items: center;
+  justify-content: center;
 }
 
-.container{
-  background-color: rgba(0, 0, 0, 0.479);
-  padding: 4rem!important;
-}
-
-h1{
-  color: white;
-  margin-bottom: 1rem!important;
-}
-
-.form-select{
-  background-image: none!important;
-  padding-right: .75rem!important;
-}
-
-button{
-  margin-top: 1rem!important;
+.container {
+  background-color: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 3rem !important;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  max-width: 520px !important;
   width: 100%;
+}
+
+h1 {
+  color: #ffffff;
+  margin-bottom: 1.5rem !important;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: -0.5px;
+}
+
+.loading-countries {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+/* react-select custom styles */
+.country-select__control {
+  border-radius: 8px !important;
+  border: none !important;
+  box-shadow: none !important;
+  min-height: 48px !important;
+}
+
+.country-select__control:hover {
+  border-color: #86b7fe !important;
+}
+
+.country-select__placeholder {
+  color: #6c757d !important;
+}
+
+.country-select__option--is-focused {
+  background-color: #e9f0ff !important;
+}
+
+.country-select__option--is-selected {
+  background-color: #0d6efd !important;
+}
+
+button {
+  margin-top: 0.75rem !important;
+  width: 100%;
+  border-radius: 8px !important;
+  padding: 0.75rem !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+button:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(25, 135, 84, 0.4);
+}
+
+.form-control {
+  border-radius: 8px !important;
+  min-height: 56px;
+}
+
+.alert {
+  border-radius: 8px;
+}
+
+@media (max-width: 576px) {
+  .container {
+    margin: 1rem;
+    padding: 2rem !important;
+  }
 }
