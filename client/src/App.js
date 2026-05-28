@@ -13,7 +13,7 @@ function App() {
   const [alert, setAlert] = useState(null);
 
   useEffect(() => {
-    fetch("https://restcountries.com/v3.1/all")
+    fetch("https://restcountries.com/v3.1/all?fields=name")
       .then((res) => res.json())
       .then((data) => {
         const sorted = data
