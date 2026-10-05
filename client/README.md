@@ -68,3 +68,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Compilación actual
+
+Se usa Vite para evitar las dependencias sin mantenimiento de Create React App. `npm install` prepara dependencias y `npm run build` genera build. El servidor de desarrollo escucha solo en el equipo local. La aplicación conserva sus componentes y sus rutas.
