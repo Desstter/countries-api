@@ -32,5 +32,8 @@
   "devDependencies": {
     "vite": "8.3.2",
     "esbuild": "0.28.2"
+  },
+  "overrides": {
+    "@babel/runtime@^7.0.0": "7.29.7"
   }
 }
